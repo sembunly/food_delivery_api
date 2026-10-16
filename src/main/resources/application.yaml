@@ -7,7 +7,7 @@ spring:
     name: food_delivery_api
 
   datasource:
-    url: JDBC:postgresql://localhost:5432/food_delivery_db
+    url: jdbc:postgresql://localhost:5432/food_delivery_db
     username: postgres
     password: "0000"
     driver-class-name: org.postgresql.Driver
@@ -19,7 +19,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
     show-sql: true
     open-in-view: false
     properties:
@@ -32,3 +32,5 @@ logging:
   level:
     org.hibernate.SQL: DEBUG
     org.hibernate.orm.jdbc.bind: TRACE
+
+
