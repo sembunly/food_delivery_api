@@ -1,3 +1,34 @@
+
+server:
+  port: 8080
+
 spring:
   application:
     name: food_delivery_api
+
+  datasource:
+    url: JDBC:postgresql://localhost:5432/food_delivery_db
+    username: postgres
+    password: "0000"
+    driver-class-name: org.postgresql.Driver
+
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      connection-timeout: 30000
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          time_zone: UTC
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.orm.jdbc.bind: TRACE
