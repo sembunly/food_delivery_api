@@ -1,5 +1,6 @@
 package com.bunli.model;
 
+import com.bunli.enumeration.UserType;
 import jakarta.persistence.*;
 import lombok.*;
 
