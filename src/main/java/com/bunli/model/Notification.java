@@ -1,9 +1,9 @@
 package com.bunli.model;
 
+import com.bunli.enumeration.NotificationChanel;
+import com.bunli.enumeration.NotificationType;
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.util.Date;
 
 @Getter
 @Setter
