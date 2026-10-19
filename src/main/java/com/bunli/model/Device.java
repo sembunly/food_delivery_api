@@ -19,12 +19,13 @@ public class Device extends BaseEntity {
     private Long id;
 
     private String deviceId;
-    private String deviceName;
+    private String deviceType;
     private String deviceModel;
     private String osVersion;
     private String appVersion;
     private Date lastLogin;
     private boolean trustDevice;
+    private String status;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private User userId;
