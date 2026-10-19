@@ -29,6 +29,8 @@ public class User extends BaseEntity {
     private String gender;
 
     private Date dateOfBirth;
+
+    @Column(name = "phone_number", length = 15, nullable = false)
     private String phoneNumber;
     private String address;
 
