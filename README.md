@@ -61,11 +61,3 @@ Application URL: http://localhost:8080
 
 - Swagger UI: http://localhost:8080/swagger-ui.html
 - OpenAPI JSON: http://localhost:8080/v3/api-docs
-
-## Development
-
-The project currently includes core entity models for users, devices, and notifications. Additional food delivery features and REST endpoints will be implemented incrementally.
-
-## License
-
-No license has been specified.
