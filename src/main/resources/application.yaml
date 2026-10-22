@@ -8,7 +8,7 @@ spring:
 
   datasource:
     url: jdbc:postgresql://localhost:5432/food_delivery_db
-    username: postgres
+    username: food_delivery_user
     password: "0000"
     driver-class-name: org.postgresql.Driver
 
