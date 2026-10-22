@@ -1,88 +1,71 @@
 # Food Delivery API
 
-RESTful backend API for a Food Delivery Management System built with Spring Boot, Spring Data JPA, and PostgreSQL.
+RESTful backend API for a Food Delivery Management System built with Spring Boot and PostgreSQL.
 
 ## Tech Stack
 
 - Java 21
 - Spring Boot 4.1.1
 - Spring Data JPA / Hibernate
-- PostgreSQL
-- Maven
-- Lombok
-- Jakarta Validation
+- PostgreSQL 18
+- Docker & Docker Compose
+- Maven, Lombok, Jakarta Validation
 - Swagger UI / OpenAPI 3
 
 ## Requirements
 
 - JDK 21
 - Maven
-- PostgreSQL
+- Docker Desktop
 - Git
 
 ## Database Setup
 
-Create a PostgreSQL database:
+Start PostgreSQL and pgAdmin using Docker Compose:
 
-```sql
-CREATE DATABASE food_delivery_db;
+```bash
+docker compose up -d
 ```
+
+**PostgreSQL Configuration**
+
+- Database: `food_delivery_db`
+- Username: `food_delivery_user`
+- Password: `0000`
+- Port: `5432`
+
+**pgAdmin:** http://localhost:5050
 
 Configure `src/main/resources/application.yaml`:
 
 ```yaml
-server:
-  port: 8080
-
 spring:
-  application:
-    name: food_delivery_api
-
   datasource:
     url: jdbc:postgresql://localhost:5432/food_delivery_db
-    username: postgres
-    password: ${DB_PASSWORD}
-
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
+    username: food_delivery_user
+    password: ${DB_PASSWORD:0000}
 ```
 
-Set the `DB_PASSWORD` environment variable before starting the application.
-
 ## Installation
-
-Clone the repository:
 
 ```bash
 git clone https://github.com/sembunly/food_delivery_api.git
 cd food_delivery_api
-```
-
-Build the project:
-
-```bash
 mvn clean install
-```
-
-Run the application:
-
-```bash
 mvn spring-boot:run
 ```
 
-Application URL:
-
-`http://localhost:8080`
+Application URL: http://localhost:8080
 
 ## API Documentation
 
-Swagger UI (when Springdoc is configured):
+- Swagger UI: http://localhost:8080/swagger-ui.html
+- OpenAPI JSON: http://localhost:8080/v3/api-docs
 
-`http://localhost:8080/swagger-ui.html`
+## Development
 
-OpenAPI JSON:
+The project currently includes core entity models for users, devices, and notifications. Additional food delivery features and REST endpoints will be implemented incrementally.
 
-`http://localhost:8080/v3/api-docs`
+## License
 
+No license has been specified.
