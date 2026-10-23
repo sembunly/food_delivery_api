@@ -38,6 +38,26 @@ docker compose up -d
 
 Configure `src/main/resources/application.yaml`:
 
+## Database Configuration
+
+### Hibernate DDL Auto
+
+After running the application for the first time, change the Hibernate DDL configuration from `create-drop` to `update`.
+
+```yaml
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+```
+
+### Explanation
+
+- `create-drop`: Creates the database schema when the application starts and drops it when the application shuts down.
+- `update`: Attempts to update the database schema according to the entity mappings without recreating the entire schema.
+
+**Important:** Back up your database before changing the configuration. Hibernate `update` does not guarantee that every schema change is handled safely.
+
 ```yaml
 spring:
   datasource:

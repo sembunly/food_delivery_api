@@ -1,10 +1,17 @@
-
 package com.bunli.model;
 
-import jakarta.persistence.*;
-import lombok.*;
-
 import java.time.LocalTime;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
@@ -13,7 +20,7 @@ import java.time.LocalTime;
 @AllArgsConstructor
 @Entity
 @Table(name = "tbl_restaurant")
-public class Restaurant {
+public class Restaurant extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +34,8 @@ public class Restaurant {
     private String address;
     private String phoneNumber;
     private String logoUrl;
-
+    // @Temporal(TemporalType.TIME)
     private LocalTime openTime;
+    // @Temporal(TemporalType.TIME)
     private LocalTime closeTime;
 }

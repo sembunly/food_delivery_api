@@ -1,5 +1,5 @@
 package com.bunli.enumeration;
 
 public enum OrderStatus {
-    PENDING, PREPARING, OUT_FRO_DELIVERY, DELIVERY
+    PENDING, PREPARING, OUT_FOR_DELIVERY, DELIVERED
 }
