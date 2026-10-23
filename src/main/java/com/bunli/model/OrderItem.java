@@ -12,15 +12,14 @@ import lombok.*;
 @Table(name = "tbl_order_item")
 public class OrderItem {
 
-    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private Long id;
 
     private Integer quantity;
     private double price;
-    private Long muneItemId;
+    private Long menuItemId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Order order;
-
 }

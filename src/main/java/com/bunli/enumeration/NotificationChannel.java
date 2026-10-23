@@ -1,5 +1,5 @@
 package com.bunli.enumeration;
 
-public enum NotificationChanel {
+public enum NotificationChannel {
     EMAIL, SMS, PUSH
 }

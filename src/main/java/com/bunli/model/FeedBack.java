@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 @Entity
 @Table(name = "tbl_feedback")
@@ -22,10 +22,10 @@ public class FeedBack extends BaseEntity {
 
     @Column(name = "comment", length = 200)
     private String comment;
-    private Double rating;
+    private double rating;
     private Date feedbackDate;
-    private Long userID;
-    private Long restaurantID;
-    private Long orderID;
-    private Long deliveryID;
+    private Long userId;
+    private Long restaurantId;
+    private Long orderId;
+    private Long deliveryId;
 }

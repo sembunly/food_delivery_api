@@ -21,7 +21,6 @@ public class MenuItem extends BaseEntity {
     private String description;
     private double price;
     private Integer availability;
-
     @ManyToOne(fetch = FetchType.LAZY)
     private Restaurant restaurant;
 }

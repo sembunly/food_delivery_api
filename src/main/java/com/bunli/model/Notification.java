@@ -1,6 +1,6 @@
 package com.bunli.model;
 
-import com.bunli.enumeration.NotificationChanel;
+import com.bunli.enumeration.NotificationChannel;
 import com.bunli.enumeration.NotificationType;
 import jakarta.persistence.*;
 import lombok.*;
@@ -21,10 +21,14 @@ public class Notification extends BaseEntity {
 
     private String title;
     private String content;
+
+    @Enumerated(EnumType.STRING)
     private NotificationType notificationType;
-    private NotificationChanel notificationChanel;
+
+    @Enumerated(EnumType.STRING)
+    private NotificationChannel notificationChannel;
+
     private boolean read;
     private Long userId;
     private Long deviceId;
-
 }

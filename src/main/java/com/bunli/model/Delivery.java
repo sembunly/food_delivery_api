@@ -1,11 +1,23 @@
-
 package com.bunli.model;
 
-import com.bunli.enumeration.DeliveryStatus;
-import jakarta.persistence.*;
-import lombok.*;
+import java.util.Date;
 
-import java.time.LocalDateTime;
+import com.bunli.enumeration.DeliveryStatus;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
@@ -14,14 +26,18 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Entity
 @Table(name = "tbl_delivery")
-public class Delivery extends BaseEntity {
+public class Delivery {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private LocalDateTime pickupItem = LocalDateTime.now();
-    private LocalDateTime deliveryTime = LocalDateTime.now();
+    @Temporal(TemporalType.TIME)
+    private Date pickupTime;
+
+    @Temporal(TemporalType.TIME)
+    private Date deliveryTime;
+
     private String pickupAddress;
     private String deliveryAddress;
     private double deliveryFee;
@@ -29,7 +45,6 @@ public class Delivery extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private DeliveryStatus deliveryStatus;
 
-    private Long deliveryPartnerID;
-
-    private Long orderID;
+    private Long deliveryPartnerId;
+    private Long orderId;
 }

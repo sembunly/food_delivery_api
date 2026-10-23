@@ -1,7 +1,17 @@
 package com.bunli.model;
 
-import jakarta.persistence.*;
-import lombok.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
@@ -9,7 +19,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "tbl_payment")
+@Table(name = "tbl_menu_item_photo")
 public class MenuItemPhoto extends BaseEntity {
 
     @Id
@@ -18,7 +28,7 @@ public class MenuItemPhoto extends BaseEntity {
 
     private String fileType;
     private String fileFormat;
-    private double filesize;
+    private double fileSize;
     private String fileName;
     private String smallUrl;
     private String mediumUrl;
@@ -27,6 +37,5 @@ public class MenuItemPhoto extends BaseEntity {
     private String status;
 
     @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "menu_item_id")
     private MenuItem menuItem;
 }
